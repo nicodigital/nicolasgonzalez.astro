@@ -1,0 +1,7 @@
+.brand{
+  @apply w-[17rem] xg:w-[25rem] h-5 xg:h-6;
+}
+
+.brand svg{
+ @apply w-full;
+}

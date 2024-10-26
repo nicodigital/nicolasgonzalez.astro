@@ -1,12 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import NicoLogo from '@/components/NicoLogo.astro';
 
 const posts = await getCollection('posts');
 ---
 
-<Layout title="Keystatic & Astro's Content Collections">
-  <div>
+<Layout 
+title="Nicolás González — Full-stack Developer"
+claim="El nuevo framework de maquetación de sitios de I+D"
+description="El nuevo framework de maquetación de sitios de I+D"
+>
+  <div class="container">
     <h1>Keystatic ⚡️ + Astro 🚀</h1>
     <p>
       This homepage shows how to load data from Astro's content collections.
@@ -26,4 +31,5 @@ const posts = await getCollection('posts');
       }
     </ul>
   </div>
+  <NicoLogo />
 </Layout>

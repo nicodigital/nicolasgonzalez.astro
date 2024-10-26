@@ -1,24 +1,80 @@
 ---
-import '../styles.css'
+import { ViewTransitions } from "astro:transitions";
+import FontFace from '../components/FontFace.astro'
+import getSlug from '@/js/getSlug';
+import getFirstUrlTerm from '@/js/getFirstUrlTerm';
 
-export interface Props {
-	title: string;
+import "@/css/global.css";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+// import Modal from "@/components/Modal.astro";
+import Favicon from "@/components/Favicon.astro";
+import Seo from "@/components/Seo.astro";
+// import getSlug from '@/js/getSlug'
+
+const siteURL = import.meta.env.SITE;
+const baseURL = import.meta.env.BASE_URL;
+
+const {
+  title = "Título de 65 caracteres",
+  claim = "Frase Coooool!",
+  description = "Descripción de 150 caracteres",
+  image = siteURL + 'img/1200x600.jpg',
+  author = 'Nicolás González',
+  author_url = siteURL,
+  robots,
+} = Astro.props;
+
+
+/* Get Page */
+const currentPath = Astro.url.pathname;
+const currPage = getSlug(currentPath);
+const firstUrlTerm = getFirstUrlTerm(currentPath);
+let dataPage = "";
+
+if( currPage === '' ){
+  dataPage = 'home';
+}else{
+  dataPage = currPage;
 }
 
-const { title } = Astro.props;
----
+// console.log(dataPage);
 
-<!DOCTYPE html>
+---
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <Favicon />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+		<FontFace />
+    <Seo {title} {claim} {description} {image} {author} {author_url}  {robots} />
+		<meta http-equiv="cleartype" content="on" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <ViewTransitions />
+  </head>
+  <body id="top" data-page={dataPage} data-scroll="top" >
+    
+    <script> import "@/js/globals";</script>
+
+    {
+      currPage !== "gracias" &&  <Header />
+    }
+
+    <main>
+      <slot />
+    </main>
+
+    {
+      currPage !== "gracias" && <Footer />
+    }
+
+  </body>
 </html>

@@ -1,0 +1,9 @@
+---
+const baseURL = import.meta.env.BASE_URL;
+const { width } = Astro.props;
+
+---
+
+<a href={baseURL} class={`${width} block`} data-astro-prefetch="hover" >
+    <img src={`${baseURL}/img/logos/logo.svg`} alt="" loading='lazy' decoding='async' />
+</a>

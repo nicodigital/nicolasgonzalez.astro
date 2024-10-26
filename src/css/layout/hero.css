@@ -1,0 +1,10 @@
+.hero{
+  @apply relative text-white overflow-hidden;
+  height: 100vh;
+  height: 100svh;
+}
+
+.hero img{
+  height: 100vh;
+  height: 100svh;
+}
