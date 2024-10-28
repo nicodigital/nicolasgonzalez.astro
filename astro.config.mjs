@@ -2,10 +2,11 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
-
-import netlify from '@astrojs/netlify';
+// import netlify from '@astrojs/netlify';
 
 import tailwind from '@astrojs/tailwind';
+
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,5 +22,5 @@ export default defineConfig({
   // base: '/',
 
   prefetch: true,
-  adapter: netlify(),
+  adapter: vercel(),
 });

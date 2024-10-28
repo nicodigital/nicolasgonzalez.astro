@@ -1,3 +1,4 @@
-.mod {
-  @apply bg-neutral-200 p-2 rounded-lg flex items-center justify-center;
+.screen{
+  @apply flex container flex-col;
+  height: calc(100vh - 10rem);
 }
