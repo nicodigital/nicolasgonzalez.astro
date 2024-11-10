@@ -1,11 +1,24 @@
 .tab-link{
   @apply cursor-pointer;
+
+  .tab-title{
+    @apply link-underline;
+  }
+
+  &.active{
+
+    .tab-title{
+      background-size: 100% .2rem;
+    }
+
+  }
+
 }
 
 .tab-content{
-  @apply hidden;
+  @apply opacity-0 pointer-events-none translate-x-[-1rem] transition-all duration-[.65s];
 }
 
 .tab-content.active{
-  @apply block;
+  @apply opacity-100 pointer-events-auto translate-x-0;
 }

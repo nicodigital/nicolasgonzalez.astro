@@ -61,8 +61,8 @@ if( currPage === '' ){
     <ViewTransitions />
   </head>
   <body id="top" data-page={dataPage} data-scroll="top" >
-    
     <script> import "@/js/globals";</script>
+    <video class="fixed top-0 left-0 w-full h-full object-cover -z-10 opacity-5" autoplay loop src="/video/background.mp4"></video>
 
     {
       currPage !== "gracias" &&  <Header />
@@ -70,6 +70,7 @@ if( currPage === '' ){
 
     <main>
       <slot />
+      <div class="absolute top-[40%] right-[var(--container-gap)]">En — Pt</div>
     </main>
 
   </body>

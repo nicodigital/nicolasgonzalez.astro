@@ -1,7 +1,4 @@
 .brand{
-  @apply w-[17rem] xg:w-[25rem] h-5 xg:h-6;
+  @apply opacity-100 !important;
 }
 
-.brand svg{
- @apply w-full;
-}

@@ -16,7 +16,6 @@ export default {
         big: 'var(--big)',
         h1: 'var(--h1)',
         h2: 'var(--h2)',
-        h3: 'var(--h3)',
         body: 'var(--body)',
         small: 'var(--small)'
       },
@@ -101,12 +100,12 @@ export default {
       sm: '640px',
       md: '768px',
       xg: '992px',
-      xl: '1064px',
+      xl: '1024px',
       '2xl': '1280px',
-      '3xl': '1420px',
-      '4xl': '1536px',
-      '5xl': '1910px',
-      '6xl': '2550px'
+      '3xl': '1440px',
+      '4xl': '1680px',
+      '5xl': '1920px',
+      '6xl': '2560px'
     },
     container: {
       screens: {

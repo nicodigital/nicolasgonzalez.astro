@@ -44,7 +44,7 @@ body{
 }
 
 
-@media (min-width: theme("screens.xg")) {
+@media (width >= theme("screens.xg")) {
 
 
   

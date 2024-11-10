@@ -1,4 +1,13 @@
 .screen{
-  @apply flex container flex-col;
-  height: calc(100vh - 10rem);
+  @apply container grid flex-col grid-rows-[1fr_2fr];
+  height: calc(100vh - 8rem);
+
+  .top{
+    @apply xg:row-start-1 xg:row-end-2;
+  }
+
+  .bottom{
+    @apply xg:row-start-2 xg:row-end-3;
+  }
+
 }

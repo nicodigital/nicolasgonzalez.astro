@@ -1,7 +1,6 @@
 header {
    @apply relative flex items-center
-      xg:h-[10rem]
-      py-2 xg:py-0
+      xg:h-8
       z-[99] transition-all;
 }
 

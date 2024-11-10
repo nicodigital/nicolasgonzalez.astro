@@ -1,15 +1,20 @@
 #menu{
   @apply 
     fixed xg:relative w-100% top-0 right-0
-    flex flex-col xg:flex-row justify-start xg:justify-between gap-2
-    ctr-px py-2 xg:py-0 
+    flex flex-col xg:grid justify-start
+    ctr-px py-2 xg:py-0 xg:px-0
     bg-neutral-700 xg:bg-transparent
     translate-x-[100%]	xg:translate-x-[0%]
     z-[999] transition-all ease-in-out duration-[.4s];
 }
 
-#menu > a, #menu > div{
+#menu a{
   @apply text-h1 xg:text-body cursor-pointer;
+
+  &.active{
+    background-size: 100% .2rem;
+  }
+
 }
 
 #menu > a:nth-child(2){
@@ -24,7 +29,7 @@
 /*//////////////////////// 992px ///////////////////////////*/
 /*//////////////////////////////////////////////////////////*/
 
-@media (min-width: theme("screens.xg")) {
+@media (width >= theme("screens.xg")) {
 
   #menu{
     height: auto;

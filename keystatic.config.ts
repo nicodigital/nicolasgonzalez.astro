@@ -2,14 +2,15 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    kind: 'github',
-    repo: "nicodigital/nicolasgonzalez.astro"
+    kind: 'local',
+    // kind: 'github',
+    // repo: "nicodigital/nicolasgonzalez.astro"
   },
   collections: {
     posts: collection({
-      label: 'Posts',
+      label: 'Projects',
       slugField: 'title',
-      path: 'src/content/posts/*',
+      path: 'src/content/projects/*/',
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
@@ -17,8 +18,8 @@ export default config({
           label: 'Content',
           options: {
             image: {
-              directory: 'src/assets/images/posts',
-              publicPath: '../../assets/images/posts/',
+              directory: 'src/content/projects/{slug}/img',
+              publicPath: './img/',
             },
           },
         }),
